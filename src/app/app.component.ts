@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'hello';
+  public name : string = 'Angular';
+  
+  public getDataFromClipBoard(): void {
+    navigator['clipboard'].readText().then((data) => {
+      this.name = data;
+    });
+  }
 }
